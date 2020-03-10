@@ -57,7 +57,7 @@ const mapItemProperties = itemProperties =>
       </StyledInspectorFooterRowListPair>
     ))
 
-const mapLabels = (graphStyle, itemLabels) => {
+export const mapLabels = (graphStyle, itemLabels) => {
   return itemLabels.map((label, i) => {
     const graphStyleForLabel = graphStyle.forNode({ labels: [label] })
     const style = {

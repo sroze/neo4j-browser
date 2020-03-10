@@ -26,6 +26,8 @@ import neoGraphStyle from '../graphStyle'
 import { InspectorComponent } from './Inspector'
 import { LegendComponent } from './Legend'
 import { StyledFullSizeContainer } from './styled'
+import { SidebarInspector } from './SidebarInspector'
+import { BottomBar } from './BottomBar'
 
 const deduplicateNodes = nodes => {
   return nodes.reduce(
@@ -230,12 +232,15 @@ export class ExplorerComponent extends Component {
           getAutoCompleteCallback={this.props.getAutoCompleteCallback}
           setGraph={this.props.setGraph}
         />
-        <InspectorComponent
+        {this.state.selectedItem && this.state.selectedItem.type === 'node' ? (
+          <SidebarInspector
+            item={this.state.selectedItem.item}
+            graphStyle={this.state.graphStyle}
+          />
+        ) : null}
+        <BottomBar
           fullscreen={this.props.fullscreen}
-          hoveredItem={this.state.hoveredItem}
-          selectedItem={this.state.selectedItem}
           graphStyle={this.state.graphStyle}
-          onExpandToggled={this.onInspectorExpandToggled.bind(this)}
         />
       </StyledFullSizeContainer>
     )

@@ -349,9 +349,9 @@ export const StyledInspectorFooterStatusMessage = styled.div`
 export const StyledZoomHolder = styled.div`
   position: absolute;
   bottom: 39px;
-  right: 0;
+  left: 0;
   padding: 6px 6px 0 6px;
-  border-left: #e6e9ef solid 1px;
+  border-right: #e6e9ef solid 1px;
   border-top: #e6e9ef solid 1px;
   background: #fff;
 `
